@@ -1,0 +1,431 @@
+.u-clearfix
+  &:after,
+  &:before
+    content: ''
+    display: table
+    clear: both
+// ------------------------------------
+.u-gradient
+  background: rgba(254,222,65,1)
+  background: -moz-linear-gradient(top, rgba(254,222,65,1) 0%, rgba(250,112,153,1) 100%)
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,222,65,1)), color-stop(100%, rgba(250,112,153,1)))
+  background: -webkit-linear-gradient(top, rgba(254,222,65,1) 0%, rgba(250,112,153,1) 100%)
+  background: -o-linear-gradient(top, rgba(254,222,65,1) 0%, rgba(250,112,153,1) 100%)
+  background: -ms-linear-gradient(top, rgba(254,222,65,1) 0%, rgba(250,112,153,1) 100%)
+  background: linear-gradient(to bottom, rgba(254,222,65,1) 0%, rgba(250,112,153,1) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fede41', endColorstr='#fa7099', GradientType=0 )
+// ------------------------------------
+.u-gradient-ltr
+  background: rgba(252,146,127,1)
+  background: -moz-linear-gradient(left, rgba(252,146,127,1) 0%, rgba(254,207,79,1) 100%)
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252,146,127,1)), color-stop(100%, rgba(254,207,79,1)))
+  background: -webkit-linear-gradient(left, rgba(252,146,127,1) 0%, rgba(254,207,79,1) 100%)
+  background: -o-linear-gradient(left, rgba(252,146,127,1) 0%, rgba(254,207,79,1) 100%)
+  background: -ms-linear-gradient(left, rgba(252,146,127,1) 0%, rgba(254,207,79,1) 100%)
+  background: linear-gradient(to right, rgba(252,146,127,1) 0%, rgba(254,207,79,1) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc927f', endColorstr='#fecf4f', GradientType=1 )
+// ------------------------------------
+.u-gradient-diagonal
+  background: rgba(241,100,75,1)
+  background: -moz-linear-gradient(-45deg, rgba(241,100,75,1) 0%, rgba(241,100,75,1) 8%, rgba(255,191,31,1) 100%)
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(241,100,75,1)), color-stop(8%, rgba(241,100,75,1)), color-stop(100%, rgba(255,191,31,1)))
+  background: -webkit-linear-gradient(-45deg, rgba(241,100,75,1) 0%, rgba(241,100,75,1) 8%, rgba(255,191,31,1) 100%)
+  background: -o-linear-gradient(-45deg, rgba(241,100,75,1) 0%, rgba(241,100,75,1) 8%, rgba(255,191,31,1) 100%)
+  background: -ms-linear-gradient(-45deg, rgba(241,100,75,1) 0%, rgba(241,100,75,1) 8%, rgba(255,191,31,1) 100%)
+  background: linear-gradient(135deg, rgba(241,100,75,1) 0%, rgba(241,100,75,1) 8%, rgba(255,191,31,1) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1644b', endColorstr='#ffbf1f', GradientType=1 )
+// ------------------------------------
+.u-gradient-top-bottom
+  background: linear-gradient(180deg, #FA709A 0%, #FEE140 100%)
+// ------------------------------------
+.u-bg-vector-point
+  background: url(image-path('bg-vector-point.png')) -30px top no-repeat
+// ------------------------------------
+.u-title
+  font-family: $title_font_family
+  font-weight: 700
+  color: #000
+  font-size: 72px
+  line-height: 1
+  letter-spacing: 10px
+  @media (max-width: $media_mlg)
+    font-size: 62px
+  @media (max-width: $media_sm)
+    font-size: 50px
+  @media (max-width: $media_xs)
+    font-size: 40px
+    letter-spacing: 2px
+
+  &_small
+    font-size: 60px
+    letter-spacing: 6px
+    @media (max-width: $media_mlg)
+      font-size: 50px
+    @media (max-width: $media_xs)
+      font-size: 40px
+      letter-spacing: 2px
+
+  &_big
+    font-size: 96px
+    @media (max-width: $media_mlg)
+      font-size: 72px
+    @media (max-width: $media_sm)
+      font-size: 50px
+    @media (max-width: $media_xs)
+      font-size: 40px
+      letter-spacing: 2px
+
+// ------------------------------------
+.u-page-title
+  font-family: $title_font_family
+  line-height: 87px
+  font-size: 72px
+  letter-spacing: 3.6px
+  color: #FFFFFF
+  height: 174px
+  display: table-cell
+  vertical-align: bottom
+  @media  (max-width: $media_sm)
+    font-size: 67px
+    letter-spacing: 2.6px
+  @media  (max-width: $media_xs)
+    font-size: 43px
+    line-height: 50px
+    margin-top: 49px
+    min-height: 100px
+// ------------------------------------
+.u-text
+  font-family: $default_font_family
+  font-size: 18px
+  line-height: 27px
+  @media (max-width: $media_mlg)
+    line-height: 24px
+
+  & + &
+    margin-top: 20px
+    @media (max-width: $media_mlg)
+      margin-top: 15px
+// ------------------------------------
+.u-button
+  display: inline-block
+  width: 244px
+  line-height: 62px
+  border: none
+  outline: none
+  position: relative
+  overflow: hidden
+  background: none
+  font-weight: 700
+  font-size: 14px
+  letter-spacing: 0.3px
+  text-transform: uppercase
+  transition: all .3s ease
+  text-decoration: none
+  color: #333333
+
+  &:hover
+    color: #fff
+    svg
+      fill: #fff !important
+    &:after
+      opacity: 0
+
+  &:after,
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    -webkit-border-radius: 40px
+    -moz-border-radius: 40px
+    border-radius: 40px
+
+  &:before
+    @extend .u-gradient-ltr
+
+  &:after
+    transition: all .3s ease
+    background: #f8f8f8
+    top: 3px
+    left: 3px
+    bottom: 3px
+    right: 3px
+    opacity: 1
+
+  span
+    position: relative
+    z-index: 1
+
+  svg
+    transition: all .3s ease
+    width: 15px
+    height: 17px
+    display: inline-block
+    vertical-align: middle
+    margin-top: -2px
+    margin-right: 10px
+
+    fill: url(#svg-gradient-1)
+// ------------------------------------
+.u-decorating
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  overflow: hidden
+
+  &>*
+    position: absolute
+    left: 50%
+// ------------------------------------
+.u-ui-slider
+  &.ui-slider-horizontal
+    height: 7px
+    .ui-slider-handle
+      top: -7px
+      margin-left: -11px
+
+  &.ui-widget.ui-widget-content
+    border: none
+  &.ui-widget-content
+    background: #e2e2e2
+  & .ui-slider-handle
+    width: 22px
+    height: 22px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    background: #fff
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25)
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25)
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25)
+    border-color: transparent
+
+    &.ui-state-active
+      border-color: #fec953
+    &:after
+      @extend .u-gradient-ltr
+      content: ''
+      display: block
+      width: 12px
+      height: 12px
+      position: absolute
+      left: 50%
+      margin-left: -6px
+      top: 50%
+      margin-top: -6px
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+    
+  .decoration-line
+    @extend .u-gradient-ltr
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    width: 0
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+// ------------------------------------
+.u-mobile-images
+  @media (min-width: $media_md)
+    display: none
+  @media (max-width: $media_md)
+    margin-top: 20px
+    margin-bottom: 20px
+    margin-left: auto
+    margin-right: auto
+
+    img
+      max-width: 100%
+      height: auto
+// ------------------------------------
+.u-news-case-3x
+  width: calc(33.3% - 15px)
+  margin-bottom: 32px
+
+  @media (max-width: $media_sm)
+    width: calc(50% - 5px)
+    margin-bottom: 10px
+  @media (max-width: $media_xs)
+    width: 100%
+
+  & + &
+    margin-left: 22px
+    @media (max-width: $media_sm)
+      margin-left: 10px
+    @media (max-width: $media_xs)
+      margin-left: 0
+
+  &:nth-child(3n+4)
+    margin-left: 0
+    @media (max-width: $media_sm)
+      margin-left: 10px
+    @media (max-width: $media_xs)
+      margin-left: 0
+
+  &:nth-child(2n+3)
+    @media (max-width: $media_sm)
+      margin-left: 0
+// ------------------------------------
+.u-shadow
+  transition: box-shadow .3s ease
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1)
+  &:hover
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15)
+// ------------------------------------
+.u-datepicker
+  .ui-datepicker
+    @extend .u-gradient-ltr
+    font-family: $default_font_family
+    border-radius: 3px
+    border: none
+    color: #fff
+    width: 540px
+    padding: 39px 34px
+    font-size: 24px
+    position: relative
+    @media (max-width: $media_sm)
+      width: 100%
+    @media (max-width: $media_xs)
+      padding: 15px 5px
+
+    .ui-datepicker-header
+      border: none
+      background: none
+      color: #fff
+      font-weight: 700
+      position: static
+
+    .ui-datepicker-title
+      margin: 0
+      font-size: 24px
+      letter-spacing: 2.4px
+      text-transform: uppercase
+      line-height: 37px
+      @media (max-width: $media_xs)
+        font-size: 20px
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next
+      transition: all .2s ease
+      width: 38px
+      height: 38px
+      border-radius: 50%
+      border: 2px solid #fff
+      top: 43px
+      cursor: pointer
+      @media (max-width: $media_xs)
+        top: 20px
+
+    .ui-datepicker-prev
+      left: 47px
+      @media (max-width: $media_sm)
+        left: 72px
+      @media (max-width: $media_xs)
+        left: 50%
+        margin-left: -143px
+
+    .ui-datepicker-next
+      right: 47px
+      @media (max-width: $media_sm)
+        right: 72px
+      @media (max-width: $media_xs)
+        right: 50%
+        margin-right: -143px
+
+    .ui-widget-header .ui-icon
+      background-image: url(image-path('datepicker-sprite.png'))
+
+    .ui-icon-circle-triangle-w
+      background-position: 0px -16px
+
+    .ui-icon-circle-triangle-e
+      background-position: -18px -16px
+
+    .ui-state-hover,
+    .ui-widget-content .ui-state-hover,
+    .ui-widget-header .ui-state-hover
+      background: #fff
+
+    .ui-state-hover
+      .ui-icon-circle-triangle-w
+        background-position: 0 0
+
+      .ui-icon-circle-triangle-e
+        background-position: -18px 0
+
+    table
+      font-size: 24px
+      margin: 0
+      margin-top: 5px
+      @media (max-width: $media_xs)
+        font-size: 15px
+
+    td
+      padding: 2px 0
+      a
+        transition: all .3s ease
+        text-align: center
+        width: 50px
+        height: 50px
+        border: none
+        border-radius: 50%
+        margin: 0 auto
+        line-height: 50px
+        padding: 0
+        background: none
+        color: #fff
+        @media (max-width: $media_xs)
+          width: 25px
+          height: 25px
+          line-height: 25px
+
+        &.ui-state-active
+          background: #fff
+          color: #FDA273
+// ------------------------------------
+.u-video
+  position: relative
+  background: #000
+
+  &__preview
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    overflow: hidden
+    background: #000
+
+    img
+      min-width: 100%
+      height: auto
+
+  &__button
+    position: absolute
+    width: 96px
+    height: 96px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    background: rgba(255, 255, 255, 1) url( image-path('play.svg') ) center center no-repeat
+    background-position-x: 53%
+    cursor: pointer
+    border: none
+    outline: none
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    transition: all 0.3s ease
+    transform-origin: 20% 20%
+
+    &:hover
+      transform: scale(1.07) translate(-50%, -50%)

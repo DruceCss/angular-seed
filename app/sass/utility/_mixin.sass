@@ -1,0 +1,350 @@
+// ------------------------- //
+// Цвет плейсхолдера ------- //
+// ------------------------- //
+@mixin placeholder-color($Color)
+  &::-webkit-input-placeholder
+    color: $Color
+
+  &::-moz-placeholder
+    color: $Color
+
+  &:-ms-input-placeholder
+  color: $Color
+
+  &:-moz-placeholder
+    color: $Color
+
+// ------------------------- //
+// Растянуть по relative родителю
+// ------------------------- //
+@mixin absolute-size
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+// ------------------------- //
+// article styles
+// ------------------------- //
+@mixin article-style
+  line-height: 25px
+  font-size: 18px
+  letter-spacing: 0.9px
+
+  color: #333333
+
+  p
+    padding-left: 90px
+    @media (max-width: $media_md)
+      padding-left: 0
+
+    & + p
+      margin-top: 26px
+      @media (max-width: $media_md)
+        margin-top: 15px  
+    br
+      @media (max-width: $media_md)
+        display: none
+
+  blockquote
+    font-weight: 500
+    line-height: 28px
+    font-size: 20px
+    letter-spacing: 1px
+
+    color: #000000
+
+    margin: 39px 0 40px
+    padding: 4px 0
+
+    padding-left: 54px
+    border-left: 6px solid #FFCA00
+    @media (max-width: $media_md)
+      padding-left: 30px
+      margin-top: 25px
+      margin-bottom: 25px
+
+  h1,h2,h3,h4,h5
+    font-family: $title_font_family
+    margin: 95px 0 59px
+    color: #000000
+    @media (max-width: $media_md)
+      margin-top: 45px
+      margin-bottom: 30px
+
+  h1
+    font-size: 72px
+    letter-spacing: 3.6px
+    line-height: 86px
+  h2
+    line-height: 60px
+    font-size: 48px
+    letter-spacing: 2.4px
+    @media (max-width: $media_xs)
+      line-height: 40px
+      font-size: 30px
+  h3
+    font-size: 40px
+    letter-spacing: 1.4px
+    line-height: 56px
+    margin: 55px 0 29px
+    @media (max-width: $media_md)
+      margin-top: 25px
+      margin-bottom: 20px
+  h4
+    font-size: 30px
+    letter-spacing: 1.4px
+    line-height: 40px
+    margin: 55px 0 29px
+    @media (max-width: $media_md)
+      margin-top: 25px
+      margin-bottom: 20px
+  h5
+    font-size: 28px
+    letter-spacing: 1.4px
+    line-height: 40px
+    margin: 30px 0 20px
+    @media (max-width: $media_md)
+      margin-top: 25px
+      margin-bottom: 20px
+// ------------------------- //
+// Decors
+// ------------------------- //
+@mixin decors
+  &__decor-1
+    @extend .u-bg-vector-point
+    position: absolute
+    top: 0
+    width: 1853px
+    height: 461px
+    left: 50%
+    margin-left: -926px
+
+  &__decor-2
+    @extend .u-gradient-top-bottom
+
+    position: absolute
+    top: 640px
+    left: -75px
+
+    width: 150px
+    height: 150px
+
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-3
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.05)
+
+    position: absolute
+    right: 40px
+    top: 1200px
+    background: #fff
+
+    width: 150px
+    height: 150px
+
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+    @media (max-width: $media_md)
+      display: none
+
+  &__decor-4
+    @extend .u-gradient-top-bottom
+
+    position: absolute
+    top: 1260px
+    right: 10px
+
+    width: 92px
+    height: 92px
+
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+    @media (max-width: $media_md)
+      display: none
+  &__decor-5
+    @extend .u-bg-vector-point
+    position: absolute
+    top: 150px
+    width: 1853px
+    height: 461px
+    left: 50%
+    margin-left: -926px
+  &__decor-6
+    @extend .u-gradient-top-bottom
+    position: absolute
+    top: 280px
+    left: 50%
+    margin-left: -970px
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+  &__decor-7
+    @extend .u-gradient-top-bottom
+
+    position: absolute
+    top: 970px
+    right: -10px
+
+    width: 106px
+    height: 106px
+
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+    @media (max-width: $media_lg)
+      display: none
+
+  &__decor-8
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.05)
+
+    position: absolute
+    left: 50%
+    margin-left: -900px
+    top: 1200px
+    background: #fff
+
+    width: 150px
+    height: 150px
+
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-9
+    @extend .u-bg-vector-point
+    position: absolute
+    top: 700px
+    width: 1853px
+    height: 461px
+    left: 50%
+    margin-left: -926px
+  &__decor-10
+    @extend .u-gradient-top-bottom
+    position: absolute
+    top: 500px
+    left: 50%
+    margin-left: -990px
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-11
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.05)
+    position: absolute
+    left: 50%
+    top: 760px
+    margin-left: 600px
+    background: #fff
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+  &__decor-12
+    @extend .u-gradient-top-bottom
+    position: absolute
+    left: 50%
+    top: 836px
+    margin-left: 716px
+    width: 92px
+    height: 92px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-13
+    @extend .u-bg-vector-point
+    position: absolute
+    top: 600px
+    width: 1853px
+    height: 461px
+    left: 50%
+    margin-left: -926px
+
+  &__decor-14
+    @extend .u-gradient-top-bottom
+    position: absolute
+    top: 900px
+    left: 50%
+    margin-left: 720px
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-15
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.05)
+    position: absolute
+    left: 50%
+    top: 400px
+    margin-left: -800px
+    background: #fff
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+  &__decor-16
+    @extend .u-gradient-top-bottom
+    position: absolute
+    left: 50%
+    top: 466px
+    margin-left: -686px
+    width: 92px
+    height: 92px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-17
+    @extend .u-bg-vector-point
+    position: absolute
+    bottom: -130px
+    width: 1853px
+    height: 461px
+    left: 0
+
+  &__decor-18
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.05)
+    position: absolute
+    left: 50%
+    top: 500px
+    margin-left: -800px
+    background: #fff
+    width: 150px
+    height: 150px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+
+  &__decor-19
+    @extend .u-gradient-top-bottom
+    position: absolute
+    left: 50%
+    top: 566px
+    margin-left: -686px
+    width: 92px
+    height: 92px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+  &__decor-20
+    @extend .u-bg-vector-point
+    position: absolute
+    top: 1300px
+    width: 1853px
+    height: 461px
+    left: 0

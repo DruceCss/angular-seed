@@ -1,0 +1,50 @@
+@keyframes top-bottom-slide-short
+  from
+    transform: translateY(0px)
+  to
+    transform: translateY(5px)
+
+.u-top-bottom-slide-short
+  animation: top-bottom-slide-short 5s infinite alternate linear
+// ------------------------------------
+@keyframes top-bottom-slide
+  from
+    transform: translateY(0px)
+  to
+    transform: translateY(30px)
+
+.u-top-bottom-slide
+  animation: top-bottom-slide 5s infinite alternate linear
+// ------------------------------------
+@keyframes bottom-top-slide
+  from
+    transform: translateY(30px)
+  to
+    transform: translateY(0px)
+
+.u-bottom-top-slide
+  animation: bottom-top-slide 5s infinite alternate linear
+// ------------------------------------
+@keyframes top-bottom-slide-long
+  from
+    transform: translateY(0px)
+  to
+    transform: translateY(50px)
+
+.u-top-bottom-slide-long
+  animation: top-bottom-slide-long 5s infinite alternate linear
+// ------------------------------------
+@keyframes show-element
+  from
+    transform: translateY(15px)
+    opacity: 0
+  to
+    transform: translateY(0px)
+    opacity: 1
+
+.u-show-element-prepare
+  opacity: 0
+  @media (max-width: $media_fs_brake)
+    opacity: 1
+.u-show-element
+  animation: show-element 1s ease forwards
