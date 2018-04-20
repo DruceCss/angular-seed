@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+let gulp = require('gulp'),
     sass = require('gulp-sass'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
@@ -7,17 +7,23 @@ var gulp = require('gulp'),
     wiredep = require('gulp-wiredep'),
     notify = require("gulp-notify"),
     through = require('through2').obj,
-    inlineAngularView = require('./node/gulp-inline-angular-view');
+    inlineAngularView = require('./node/gulp-inline-angular-view'),
+    clean = require('gulp-clean'),
+    gulpsync = require('gulp-sync')(gulp);
 
-gulp.task('prod', function () {
+gulp.task('prod', gulpsync.sync(['bower', 'sass', 'clean', 'images', 'fonts']), function () {
     return gulp.src('app/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.js', inlineAngularView('./app', ['vendor.js'])))
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('./dist'))
-        .pipe(notify({message: 'Production ready', onLast: true}))
+        .pipe(notify({message: 'Production ready', onLast: true}));
 });
+
+gulp.task('dev', ['sass', 'bower', 'watch']);
+
+gulp.task('watch', ['sass:watch', 'bower:watch']);
 
 gulp.task('sass', function () {
     return gulp.src('./app/sass/app.sass')
@@ -36,12 +42,24 @@ gulp.task('bower', function () {
             directory: "app/bower_components"
         }))
         .pipe(gulp.dest('./app'))
+        .pipe(notify({message: 'Bower ready', onLast: true}));
 });
 
-gulp.task('test', function () {
-    iav('./dist', './app', [
-        // ignore from root
-        'bower_components',
-        'vendor.js'
-    ]);
+gulp.task('bower:watch', function () {
+    gulp.watch('./bower.json', ['bower']);
+});
+
+gulp.task('images', function () {
+    return gulp.src('./app/images/**/*.*')
+        .pipe(gulp.dest('./dist/images'));
+});
+
+gulp.task('fonts', function () {
+    return gulp.src('./app/fonts/**/*.*')
+        .pipe(gulp.dest('./dist/fonts'));
+});
+
+gulp.task('clean', function () {
+    return gulp.src('./dist/', {read: false})
+        .pipe(clean());
 });
