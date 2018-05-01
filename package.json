@@ -3,10 +3,11 @@
     "private": true,
     "version": "0.0.0",
     "description": "A starter project for AngularJS",
-    "repository": "https://github.com/angular/angular-seed",
+    "repository": "https://github.com/DruceCss/angular-seed",
     "license": "MIT",
     "devDependencies": {
         "bower": "^1.7.7",
+        "cli-color": "^1.2.0",
         "gulp": "^3.9.1",
         "gulp-clean": "^0.4.0",
         "gulp-clean-css": "^3.9.3",
