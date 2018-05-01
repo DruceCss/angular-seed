@@ -1,6 +1,7 @@
 'use strict';
 
 let fs = require('fs'),
+    req = require('./require'),
     l = require('./log.js');
 
 // node cg.js create [type] [name]
@@ -27,6 +28,8 @@ module.exports = function () {
     }
 
     function create() {
+        let file_require = new req();
+
         if (!checkDirExist()) {
             let templates = getTemplateDirFiles();
             let operation_finished = 0;
@@ -47,6 +50,8 @@ module.exports = function () {
                 });
             }
 
+
+            file_require[type](name);
             return;
         }
 
